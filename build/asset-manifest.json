@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b99b274b.css",
+    "main.js": "/static/js/main.35d68ca8.js",
+    "static/js/453.23131384.chunk.js": "/static/js/453.23131384.chunk.js",
+    "static/media/plus-jakarta-sans-latin-400-normal.woff": "/static/media/plus-jakarta-sans-latin-400-normal.39dc22001ff1af8e8e63.woff",
+    "static/media/plus-jakarta-sans-latin-ext-400-normal.woff": "/static/media/plus-jakarta-sans-latin-ext-400-normal.15f1e40e22f5f03829a3.woff",
+    "static/media/plus-jakarta-sans-latin-400-normal.woff2": "/static/media/plus-jakarta-sans-latin-400-normal.9eb2a7e5bc8f2a766ae0.woff2",
+    "static/media/plus-jakarta-sans-latin-ext-400-normal.woff2": "/static/media/plus-jakarta-sans-latin-ext-400-normal.da391a853aaba053fe17.woff2",
+    "static/media/plus-jakarta-sans-vietnamese-400-normal.woff": "/static/media/plus-jakarta-sans-vietnamese-400-normal.082a9efae1575b7e5cdb.woff",
+    "static/media/plus-jakarta-sans-vietnamese-400-normal.woff2": "/static/media/plus-jakarta-sans-vietnamese-400-normal.218c4ebfb100ffd08de5.woff2",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/plus-jakarta-sans-cyrillic-ext-400-normal.woff": "/static/media/plus-jakarta-sans-cyrillic-ext-400-normal.995a2c8b0527adb81930.woff",
+    "static/media/plus-jakarta-sans-cyrillic-ext-400-normal.woff2": "/static/media/plus-jakarta-sans-cyrillic-ext-400-normal.048f216a8f5b51504c72.woff2",
+    "index.html": "/index.html",
+    "main.b99b274b.css.map": "/static/css/main.b99b274b.css.map",
+    "main.35d68ca8.js.map": "/static/js/main.35d68ca8.js.map",
+    "453.23131384.chunk.js.map": "/static/js/453.23131384.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b99b274b.css",
+    "static/js/main.35d68ca8.js"
+  ]
+}
