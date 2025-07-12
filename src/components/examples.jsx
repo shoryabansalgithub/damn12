@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const images = [
-  "https://images.unsplash.com/photo-1581091012184-7c74768c0785",
+  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
   "https://images.unsplash.com/photo-1579546929518-9e396f3cc809",
   "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d",
   "https://images.unsplash.com/photo-1519125323398-675f0ddb6308"
