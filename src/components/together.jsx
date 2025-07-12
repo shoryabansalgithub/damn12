@@ -17,8 +17,8 @@ const Together = () => {
 
     return (
         <>
-        <ImageUploader UploadImageHandler={UploadImageHandler} />
-        <ImagePreview loading={loading} selectedImage={selectedImage} />
+        <ImageUploader onUpload={UploadImageHandler} />
+        <ImagePreview uploadedUrl={selectedImage} enhancedUrl={enhancedImage} />
         
         </>
     )

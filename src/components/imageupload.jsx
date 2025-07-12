@@ -12,8 +12,12 @@ const shimmerAnimation = `
 const ImageUploader = ({ onUpload }) => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
+    console.log('File selected:', file);
     if (file && onUpload) {
+      console.log('Calling onUpload with file:', file.name);
       onUpload(file);
+    } else {
+      console.log('No file selected or onUpload not provided');
     }
   };
 
@@ -35,6 +39,7 @@ const ImageUploader = ({ onUpload }) => {
               type="file"
               id="fileInput"
               className="hidden"
+              accept="image/*"
               onChange={handleFileChange}
             />
             <span className="text-gray-700 text-base md:text-lg font-medium">
