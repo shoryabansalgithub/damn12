@@ -8,15 +8,9 @@ const baseUrl = "https://techhk.aoscdn.com/api/tasks/visual/scale";
 const enhanceImageApi = async (file) => {
     try {
         console.log('Starting image enhancement for:', file.name);
+        console.log('API Key available:', !!API_KEY);
         
-        if (!API_KEY) {
-            throw new Error('API key not found. Please check your environment variables.');
-        }
-
-        // For now, we'll use the mock implementation since the actual API requires proper setup
-        // In production, you would uncomment the actual API implementation below
-        
-        // Mock implementation for testing
+        // Mock implementation for testing (works without API key)
         await new Promise(resolve => setTimeout(resolve, 3000)); // Simulate processing time
         
         // Create a mock enhanced image by applying a simple filter effect
@@ -26,25 +20,35 @@ const enhanceImageApi = async (file) => {
         
         return new Promise((resolve, reject) => {
             img.onload = () => {
-                canvas.width = img.width;
-                canvas.height = img.height;
-                
-                // Apply enhancement effects
-                ctx.filter = 'brightness(1.2) contrast(1.1) saturate(1.1) sharpness(1.1)';
-                ctx.drawImage(img, 0, 0);
-                
-                // Convert to blob URL
-                canvas.toBlob((blob) => {
-                    const enhancedUrl = URL.createObjectURL(blob);
-                    console.log('Image enhancement completed');
-                    resolve({
-                        url: enhancedUrl,
-                        status: 'completed'
-                    });
-                }, 'image/jpeg', 0.9);
+                try {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    
+                    // Apply enhancement effects
+                    ctx.filter = 'brightness(1.2) contrast(1.1) saturate(1.1)';
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // Convert to blob URL
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            const enhancedUrl = URL.createObjectURL(blob);
+                            console.log('Image enhancement completed successfully');
+                            resolve({
+                                url: enhancedUrl,
+                                status: 'completed'
+                            });
+                        } else {
+                            reject(new Error('Failed to create enhanced image blob'));
+                        }
+                    }, 'image/jpeg', 0.9);
+                } catch (error) {
+                    console.error('Canvas processing error:', error);
+                    reject(new Error('Failed to process image enhancement'));
+                }
             };
             
             img.onerror = () => {
+                console.error('Failed to load image for enhancement');
                 reject(new Error('Failed to load image for enhancement'));
             };
             
@@ -53,6 +57,10 @@ const enhanceImageApi = async (file) => {
         
         /* 
         // Actual API implementation (uncomment when ready to use real API):
+        
+        if (!API_KEY) {
+            throw new Error('API key not found. Please check your environment variables.');
+        }
         
         // Step 1: Upload image to get URL
         const formData = new FormData();
